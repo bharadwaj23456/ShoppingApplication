@@ -14,7 +14,7 @@ struct ProductListView: View {
     var body: some View {
         ZStack {
             NavigationView {
-                List(viewModel.products) { product in  // Changed Products to products (lowercase)
+                List(viewModel.products) { product in  
                     ShoppingListCell(products: product)
                         .listRowSeparator(.hidden)
                         .onTapGesture {
@@ -26,7 +26,7 @@ struct ProductListView: View {
                 .disabled(viewModel.isShowingDetail)
             }
             .task {
-               viewModel.fetchProducts()  // Changed getAppetizers to fetchProducts
+               viewModel.fetchProducts()  
             }
             .blur(radius: viewModel.isShowingDetail ? 20 : 0)
             
